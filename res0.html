@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.js" integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg=" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/39cab4bf95.js" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+        <title>Plano de teste de Software</title>
+    </head>
+    <body>
+        <a href="index.html" class="back" id="Btn">Voltar</a>
+        <input id="scrollBar" class="scrollBar" type="range" min="0" max="100" value="0">
+        <h1 class="title"><i class="fa-solid fa-map"></i>Plano de teste de Software</h1>
+        <div class="Pes">
+            <h3 class="PesTopic">
+                <i class="fa-solid fa-square-poll-vertical"></i>Resumo introdutório
+            </h3>
+            <p class="PesPalagrafy">
+                Em resumo, um plano de teste de software é uma ferramenta essencial para o sucesso de um projeto de desenvolvimento de software, pois fornece uma abordagem estruturada e organizada para a realização dos testes, contribuindo para a entrega de um software de alta qualidade aos usuários finais.
+            </p>
+            <h3 class="PesTopic">
+                <i class="fa-solid fa-person-praying"></i>Elementos comuns em um plano de teste de software
+            </h3>
+            <p class="PesPalagrafy">
+                Objetivos: Os objetivos do plano de teste de software devem ser claramente definidos. Isso pode incluir verificar se o software atende aos requisitos funcionais e não funcionais, identificar e corrigir defeitos, garantir a estabilidade do software, entre outros.
+                <br><br>
+                Escopo: O escopo do plano de teste deve especificar quais partes do software serão testadas e quais serão excluídas. Isso pode incluir determinar se todo o sistema será testado ou apenas módulos específicos.
+                <br><br>
+                Estratégia de teste: A estratégia de teste descreve a abordagem geral que será adotada para testar o software. Isso pode incluir a definição de tipos de teste, como testes de unidade, testes de integração, testes de sistema, testes de desempenho, testes de segurança, etc.
+                <br><br>
+                Recursos: Os recursos necessários para realizar os testes devem ser identificados, como hardware, software, ambientes de teste, dados de teste e recursos humanos.
+                <br><br>
+                Cronograma: O cronograma deve incluir a sequência de atividades de teste, suas durações estimadas e as dependências entre elas. Isso ajudará a garantir que o teste seja realizado dentro do prazo previsto.
+                <br><br>
+                Critérios de entrada/saída: Os critérios de entrada especificam as condições que devem ser atendidas antes que o teste possa ser iniciado, como a conclusão do desenvolvimento de determinados módulos. Os critérios de saída são os resultados esperados dos testes, como um número mínimo de defeitos conhecidos.
+                <br><br>
+                Responsabilidades: As responsabilidades das equipes e indivíduos envolvidos no teste devem ser claramente definidas, incluindo os papéis do gerente de teste, dos engenheiros de teste e dos desenvolvedores.
+                <br><br>
+                Riscos e contingências: Os riscos associados ao teste devem ser identificados, avaliados e documentados, juntamente com as ações planejadas para mitigar esses riscos.
+            </p>
+            <h3 class="PesTopic">
+                <i class="fa-solid fa-location-pin"></i>Objetivo
+            </h3>
+            <p class="PesPalagrafy">
+                O objetivo do plano de teste de software é fornecer uma estrutura e uma abordagem sistemática para a realização dos testes em um projeto de desenvolvimento de software. Ele tem como finalidade garantir que todas as funcionalidades e aspectos relevantes do software sejam testados de forma abrangente e eficaz
+            </p>
+            <h3 class="PesTopic">
+                <i class="fa-solid fa-wrench"></i>Utilidade
+            </h3>
+            <p class="PesPalagrafy">
+                Em resumo, o plano de teste de software é útil para fornecer uma estrutura organizada, definir estratégias de teste, facilitar a comunicação, gerenciar riscos, otimizar o uso de recursos e documentar as atividades de teste. Ele desempenha um papel crucial na garantia da qualidade do software e no sucesso do projeto de desenvolvimento
+            </p>
+            <h3 class="PesTopic">
+                <i class="fa-solid fa-microscope"></i>Conclusão
+            </h3>
+            <p class="PesPalagrafy">
+                Um plano de teste de software é um documento que descreve a abordagem e as atividades planejadas para testar um software específico. Ele é criado durante a fase de planejamento do ciclo de vida do desenvolvimento de software e fornece uma estrutura para garantir que todos os aspectos do software sejam testados de maneira abrangente.<br>
+                Alguns elementos comuns em um plano de teste de software incluem: objetivos, escopo, estratégia de teste, recursos necessários, cronograma, critérios de entrada/saída, responsabilidades e riscos e contingências.<br>
+                Discutimos o objetivo principal de um plano de teste de software, que é garantir a qualidade do software, verificando se ele atende aos requisitos funcionais e não funcionais e se funciona corretamente em diferentes cenários. Além disso, mencionamos que o plano de teste ajuda a aumentar a cobertura dos testes, estabelecer uma estratégia de teste, gerenciar recursos e riscos, e fornecer organização, clareza, controle e documentação no processo de teste.<br>
+                Concluindo, um plano de teste de software desempenha um papel crucial na garantia da qualidade do software e no sucesso do projeto de desenvolvimento, fornecendo diretrizes estruturadas para as atividades de teste, garantindo a cobertura adequada, otimizando o uso de recursos e promovendo a comunicação eficaz entre as partes interessadas.<br>
+            </p>
+            <br><br><br><br>
+        </div>
+        <a class="link" href="https://www.devmedia.com.br/plano-de-teste-um-mapa-essencial-para-teste-de-software/13824">Fonte</a>
+    </body>
+    <script type="text/javascript">
+        const scrollBar = document.querySelector('#scrollBar');
+
+        window.addEventListener('scroll', function() {
+          const scrollPosition = window.pageYOffset;
+          const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrollPercentage = (scrollPosition / documentHeight) * 100;
+
+          scrollBar.value = scrollPercentage;
+        });
+
+        scrollBar.addEventListener('input', function(){
+          const value = parseInt(scrollBar.value);
+          const maxH = window.innerHeight;
+          const scrollValue = (value / 100) * maxH;
+
+          scrol(scrollValue);
+        });
+
+        document.querySelector('body').addEventListener('keydown', (event)=>{
+        var KeyCode = event.keyCode || event.which;
+            if(KeyCode==37){
+                let btn = document.querySelector('#Btn');
+                btn.click();
+            }
+        });
+    </script>
+</html>

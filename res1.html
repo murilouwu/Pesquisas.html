@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.js" integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg=" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/39cab4bf95.js" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+        <title>Camadas de transporte e aplicação redes</title>
+    </head>
+    <body>
+        <a href="index.html" class="back" id="Btn">Voltar</a>
+        <input id="scrollBar" class="scrollBar" type="range" min="0" max="100" value="0">
+        <h1 class="title"><i class="fa-solid fa-layer-group"></i>Camadas de transporte e aplicação redes</h1>
+        <div class="Pes">
+            <h3 class="PesTopic">
+                <i class="fa-solid fa-square-poll-vertical"></i>Resumo introdutório
+            </h3>
+            <p class="PesPalagrafy">
+                A camada de transporte do protocolo OSI é a primeira em que apenas as duas entidades que querem se comunicar tomam parte. É por isso que uma de suas funções é o estabelecimento de um padrão de qualidade de serviço (QoS) sobre o qual a comunicação deve ocorrer.
+                <br>Além do estabelecimento da qualidade de serviço, cabe ainda à camada de transporte a definição de como uma conexão deve ser estabelecida, mantida e encerrada. Também é na camada de transporte (em conjunto com a de rede) que se materializa o protocolo TCP/IP, que é, sem sombra de dúvida, o padrão dominante na Internet.
+            </p>
+            <h3 class="PesTopic">
+                <i class="fa-solid fa-wrench"></i>Funções
+            </h3>
+            <p class="PesPalagrafy">
+                A camada de transporte trata, fundamentalmente, do processo de conexão entre duas entidades que irão se comunicar. Nesse processo, as principais funções por ela oferecidas às camadas superiores são:<br><br>
+                Definição da Qualidade de Serviço (QoS)<br><br>
+                Definição do processo de conexão e desconexão de uma sessão<br><br>
+                Definição de endereçamento dos processos comunicantes associado ao protocolo TCP/IP
+            </p>
+            <h3 class="PesTopic">
+                <i class="fa-solid fa-microscope"></i>Protocolos
+            </h3>
+            <p class="PesPalagrafy">
+                Como a camada de transporte é a primeira em que os pacotes transferidos entre as duas entidades que se comunicam só circulam nas máquinas em que estão executando, cabe a ela fazer o controle da conexão e desconexão entre essas máquinas. Por apenas envolver as máquinas origem e destino, os protocolos dessa camada são chamados de protocolos ponto-a-ponto.
+                <br><br>
+                Dentro desse cenário a operação do protocolo de conexão é bastante simples, requerendo apenas que se enviem mensagens solicitando a conexão, aceitando o pedido e confirmando o estabelecimento da conexão após acordos sobre o padrão de QoS a ser admitido. Todo esse processo é bastante bem definido através de primitivas chamadas TPDUs (Transport Protocol Data Unit), que possuem sintaxe e relações de dependência delimitadas.
+                <br><br>
+                Os problemas surgem, de fato, no momento da desconexão entre as duas máquinas, o que deve ocorrer de modo a evitar que uma delas permaneça acreditando que a conexão ainda está em atividade. Isso ocorre pela falta de capacidade de se identificar que o parceiro da comunicação está pronto para se desconectar sem que ele lhe envie uma mensagem sobre isso. Ao receber tal mensagem, é o seu parceiro que ficará na dúvida sobre se você recebeu, ou não, a última mensagem enviada. Esse processo de dúvidas prossegue ad infinitum caso um dos dois parceiros não admita, sem necessidade de uma mensagem, que o outro está pronto para a desconexão.
+                <br><br>
+                A esse problema se aplicam soluções de concordância (Agreement), em que o protocolo de desconexão deve ser feito de modo que, num dado ponto, um dos parceiros admita que o outro iniciou a desconexão real caso não receba mensagem indicando o contrário.
+            </p>
+            <h3 class="PesTopic">
+                <i class="fa-solid fa-truck-fast"></i>QoS
+            </h3>
+            <p class="PesPalagrafy">
+                Durante o processo de estabelecimento de uma conexão devem ser definidos alguns detalhes sobre como a mesma transcorrerá. Um desses detalhes é a definição da qualidade de serviço (QoS), a qual, na prática, define os limites mínimos aceitáveis para certos parâmetros de desempenho para que a conexão seja mantida. Os valores estabelecidos de QoS durante a fase de conexão são, portanto, pisos de desempenho para a conexão. Dentro do protocolo OSI se definem diversas classes de QoS, segundo patamares de erros e perdas de pacotes. A classe de uma rede (do ponto de vista de qualidade) é definido pela classificação ISO.
+            </p>
+            <h3 class="PesTopic">
+                <i class="fa-solid fa-location-pin"></i>Endereçamento
+            </h3>
+            <p class="PesPalagrafy">
+                O problema de endereçamento consiste em permitir que várias conexões sejam estabelecidas, por uma mesma máquina, com uma ou mais máquinas simultaneamente. Isso implica em que cada conexão deverá ter endereços específicos, que permitam à camada de transporte diferenciar entre uma conexão e outra. Isso é feito através de endereços de portas de serviço, conhecidas por TSAP (Transport Service Access Point). As entidades que querem trocar informações devem, então, especificar endereços TSAP em que efetivarão tais trocas. No caso particular do TCP/IP as TSAPs são implementadas através de sockets para identificar os pontos (portas) de acesso.
+                <br><br>
+                Em situações específicas, como acesso a serviços considerados padrões na internet (acesso a um sistema de arquivos, por ex.), esse processo de endereçamento faz uso de portas (TSAPs) pré-definidas para a conexão, que depois são redirecionadas para portas gerais. No protocolo TCP essas portas pré-definidas estão abaixo da porta 49151, como por exemplo o serviço de telnet na porta 23, ssh na porta 22 e http na porta 80.
+            </p>
+            <h3 class="PesTopic">
+                <i class="fa-solid fa-layer-group"></i>Multiplexação e TCP/IP
+            </h3>
+            <p class="PesPalagrafy">
+                Como a camada de aplicação trata de multiplas conexões simultâneas e as camadas abaixo dela podem tratar apenas de uma informação por vez, é necessário definir como isso pode ser acomodado. A técnica usada é a de multiplexação das conexões, ficando a camada de aplicação responsável por definir qual porta (TSAP) acessará a camada de rede por vez.
+                <br>
+                Finalmente, para concluir o estudo da camada de transporte falta examinar o funcionamento do protocolo TCP/IP. Na realidade, esse protocolo trabalha em cinco camadas, que são as camadas física, de enlace, de rede, de transporte e de aplicação. Dessas camadas todas é nas camadas de rede e de transporte que aparecem as diferenças significativas entre TCP/IP e OSI. Em específico, é na camada de rede que está regulado o protocolo IP, enquanto o TCP funciona na camada de transporte para trocas de dados que demandem o estabelecimento de conexão. Além do TCP existe também na camada de transporte o protocolo UDP, usado quando não existe necessidade de conexão.
+            </p>
+            <br><br><br><br>
+        </div>
+        <a class="link" href="https://www.dcce.ibilce.unesp.br/~aleardo/cursos/fsc/cap08.php">Fonte</a>
+    </body>
+    <script type="text/javascript">
+        const scrollBar = document.querySelector('#scrollBar');
+
+        window.addEventListener('scroll', function() {
+          const scrollPosition = window.pageYOffset;
+          const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrollPercentage = (scrollPosition / documentHeight) * 100;
+
+          scrollBar.value = scrollPercentage;
+        });
+        
+        scrollBar.addEventListener('input', function(){
+          const value = parseInt(scrollBar.value);
+          const maxH = window.innerHeight;
+          const scrollValue = (value / 100) * maxH;
+
+          scrol(scrollValue);
+        });
+
+        document.querySelector('body').addEventListener('keydown', (event)=>{
+        var KeyCode = event.keyCode || event.which;
+            if(KeyCode==37){
+                let btn = document.querySelector('#Btn');
+                btn.click();
+            }
+        });
+    </script>
+</html>
